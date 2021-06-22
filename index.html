@@ -2,100 +2,44 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Início - Avaliador</title>
+    <title>Login - Avaliador</title>
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="signin.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
   <body>
-    <div class="container">
-      <br><br><br>
+    <form name="loginForm" class="form-signin" onsubmit="return validateForm()">
+      <h1 class="h3 mb-3 font-weight-normal " style="text-align: center;">Login</h1>
+      <small>Usuário: <code>lider</code> ou <code>subordinado</code></small>
+      <label for="inputUser" class="sr-only">Usuário</label>
+      <input type="text" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
+      <small>A senha não é validada</small>
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    </form>
 
-      <div class="row">
-        <div class="col-sm">
-          <div class="media">
-            <img height="88" src="https://ui-avatars.com/api/?name=Sérgio%20Leite" class="align-self-center mr-3" alt="Carol Galvão">
-            <div class="media-body">
-              <h4 class="mt-0">Carol Galvão</h4>
-              <p class="mb-0">Product Owner</p>
-              <a href="login.html" class="mb-0">Sair</a>
-            </div>
-          </div>
-        </div>
-      </div>
+    <script>
+      function validateForm() {
+        var usuario = document.forms['loginForm']['inputUser'].value;
+        var senha = document.forms['loginForm']['inputPassword'].value;
 
-      <br><br><br>
+        if (usuario === 'lider') {
+          window.location.href = 'home.html'
+        } else if (usuario === 'subordinado') {
+          window.location.href = 'subordinado.html'
+        } else {
+          alert('Usuário e/ou senha incorretos')
+        }
 
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item active" aria-current="page">Início</li>
-        </ol>
-      </nav>
-
-      <div class="row">
-        <div class="col-md">
-          <div class="card">
-            <h5 class="card-header">Minha avaliação</h5>
-            <div class="card-body">
-              <div class="text-center">
-                <canvas id="myChart" width="400" height="400"></canvas>
-                <a href="minha-avaliacao.html" role="button" class="btn btn-outline-primary">Ver detalhes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md">
-          <div class="card">
-            <h5 class="card-header">Subordinados</h5>
-            <div class="card-body">
-              <div class="list-group list-group-flush">
-                <a href="avaliacao.html?funcionario=Alexandre Zelante" class="list-group-item list-group-item-action">
-                  <div class="media">
-                    <img height="48px" src="https://ui-avatars.com/api/?name=Alexandre%20Zelante" class="align-self-center mr-3" alt="Alexandre Zelante">
-                    <div class="media-body">
-                      <div>
-                        <h5 class="mt-0">
-                          Alexandre Zelante
-                          <span class="badge badge-success float-right">4.7</span>
-                        </h5>
-                        <p class="mb-0">Scrum Master / Desenvolvedor</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                <a href="avaliacao.html?funcionario=André Casaes" class="list-group-item list-group-item-action">
-                  <div class="media">
-                    <img height="48px" src="https://ui-avatars.com/api/?name=Igor%20Antun" class="align-self-center mr-3" alt="André Casaes">
-                    <div class="media-body">
-                        <h5 class="mt-0">
-                          André Casaes
-                          <span class="badge badge-warning float-right">3.2</span>
-                        </h5>
-                        <p class="mb-0">Desenvolvedor</p>
-                    </div>
-                  </div>
-                </a>
-                <a href="avaliacao.html?funcionario=Pedro Paulo" class="list-group-item list-group-item-action">
-                  <div class="media">
-                    <img height="48px" src="https://ui-avatars.com/api/?name=Yuri%20Vinicius" class="align-self-center mr-3" alt="Pedro Paulo">
-                    <div class="media-body">
-                        <h5 class="mt-0">
-                          Pedro Paulo
-                          <span class="badge badge-success float-right">4.3</span>
-                        </h5>
-                        <p class="mb-0">Desenvolvedor</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+        return false
+      }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -106,29 +50,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
-
-    <script>
-      var ctx = document.getElementById('myChart').getContext('2d');
-
-      var myChart = new Chart(ctx, {
-        type: 'radar',
-        data: {
-          labels: ['Desempenho', 'Profissionalismo', 'Personalidade', 'Ética', 'Liderança'],
-          datasets: [{
-            label: 'Avaliação',
-            data: [3.9, 2.8, 4.2, 4.7, 3.4],
-          }]
-        },
-        options: {
-          scale: {
-            ticks: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    </script>
   </body>
 </html>
