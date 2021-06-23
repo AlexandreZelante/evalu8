@@ -15,7 +15,7 @@
   <body>
     <form name="loginForm" class="form-signin" onsubmit="return validateForm()">
       <h1 class="h3 mb-3 font-weight-normal " style="text-align: center;">Login</h1>
-      <small>Usuário: <code>lider</code> ou <code>subordinado</code></small>
+      <small>Usuário: <code>lider</code> ou <code>liderado</code></small>
       <label for="inputUser" class="sr-only">Usuário</label>
       <input type="text" id="inputUser" class="form-control" placeholder="Usuário" required autofocus>
       <small>A senha não é validada</small>
@@ -31,8 +31,8 @@
 
         if (usuario === 'lider') {
           window.location.href = 'home.html'
-        } else if (usuario === 'subordinado') {
-          window.location.href = 'subordinado.html'
+        } else if (usuario === 'liderado') {
+          window.location.href = 'liderado.html'
         } else {
           alert('Usuário e/ou senha incorretos')
         }
