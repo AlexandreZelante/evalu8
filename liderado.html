@@ -34,22 +34,23 @@
           <li class="breadcrumb-item active" aria-current="page">Início</li>
         </ol>
       </nav>
-      <a href="./relatorio.pdf" download="AndreCasaes">Relatório</a>
       <div class="row">
-        <div class="col-md">
+        <div class="col-md-6">
           <div class="card">
             <h5 class="card-header">Minha avaliação</h5>
             <div class="card-body">
               <div class="text-center">
                 <canvas id="myChart" width="400" height="400"></canvas>
+                <a href="relatorio.pdf" role="button" target="_blank" class="btn btn-outline-primary">Baixar Relatório</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md">
+        <div class="col-md-6">
           <div class="card">
             <h5 class="card-header">Competências</h5>
             <div class="card-body">
+              <img src="satisfacao.jpg" width="100%" />
               <div class="accordion" id="competencias">
                 <div class="card">
                   <div class="card-header" id="headingDesempenho">
@@ -57,7 +58,7 @@
                       <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseDesempenho" aria-expanded="false" aria-controls="collapseDesempenho">
                         Desempenho
                       </button>
-                      <span class="badge badge-success float-right">4.4</span>
+                      <span class="badge badge-success float-right">4.0</span>
                     </h2>
                   </div>
                   <div id="collapseDesempenho" class="collapse" aria-labelledby="headingDesempenho" data-parent="#competencias">
@@ -76,7 +77,7 @@
                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseComportamento" aria-expanded="false" aria-controls="collapseComportamento">
                         Comportamento
                       </button>
-                      <span class="badge badge-danger float-right">2.6</span>
+                      <span class="badge badge-danger float-right">1.5</span>
                     </h2>
                   </div>
                   <div id="collapseComportamento" class="collapse" aria-labelledby="headingComportamento" data-parent="#competencias">
@@ -101,7 +102,7 @@
                       <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHabilidades" aria-expanded="false" aria-controls="collapseHabilidades">
                         Habilidades Sociais e Pessoais
                       </button>
-                      <span class="badge badge-success float-right">3.7</span>
+                      <span class="badge badge-success float-right">4.0</span>
                     </h2>
                   </div>
                   <div id="collapseHabilidades" class="collapse" aria-labelledby="headingHabilidades" data-parent="#competencias">
@@ -157,7 +158,7 @@
           labels: ['Desempenho', 'Comportamento', 'Habilidades'],
           datasets: [{
             label: 'Avaliação',
-            data: [4.4, 2.6, 3.7],
+            data: [4.4, 1.5, 4.0],
           }]
         },
         options: {
